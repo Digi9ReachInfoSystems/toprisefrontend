@@ -200,18 +200,11 @@ export default function OrderDetailsPage({ order }: OrderDetailsPageProps) {
 
   const handleDownload = () => {
     const invoiceUrl = order.invoiceUrl;
-    console.log("invoiceUrl", invoiceUrl);
     if (!invoiceUrl) return;
-
-    const link = document.createElement("a");
-    link.href = invoiceUrl;
-    link.download = invoiceUrl.split("/").pop() || "invoice.pdf";
-    console.log("link", link);
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    console.log("link clicked");
+  
+    window.open(invoiceUrl, "_blank", "noopener,noreferrer");
   };
+  
   const isReturnEligible = (order: any, returnWindowDays?: number) => {
     // Check if order is delivered and within return window (using dynamic return_window_days)
     const deliveredStatus = ["delivered", "completed"].includes(
