@@ -351,7 +351,7 @@ export default function CreateCategory({
             </Label>
             <Input
               id="category_code"
-              placeholder="AUTO_GENERATED"
+              placeholder="Enter category code"
               className="w-full bg-gray-50 border-gray-200 rounded-lg"
               {...register("category_code")}
             />
