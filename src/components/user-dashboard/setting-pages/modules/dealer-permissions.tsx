@@ -692,7 +692,7 @@ export default function DealerPermissions({ className }: DealerPermissionsProps)
                 </Label>
               </div>
               {readEnabled && (
-                <Badge variant="secondary">
+                <Badge >
                   {readFields.length} field{readFields.length !== 1 ? 's' : ''} selected
                 </Badge>
               )}
@@ -734,7 +734,7 @@ export default function DealerPermissions({ className }: DealerPermissionsProps)
                 </Label>
               </div>
               {updateEnabled && (
-                <Badge variant="secondary">
+                <Badge >
                   {updateFields.length} field{updateFields.length !== 1 ? 's' : ''} selected
                 </Badge>
               )}
