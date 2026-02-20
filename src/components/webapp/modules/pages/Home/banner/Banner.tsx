@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import Script from "next/script";
 import { useAppSelector } from "@/store/hooks";
 import { selectVehicleTypeId } from "@/store/slice/vehicle/vehicleSlice";
 import {
@@ -456,6 +457,14 @@ export default function BannerSection() {
       <PurchaseOrderDialog 
         isOpen={isPODialogOpen} 
         onClose={() => setIsPODialogOpen(false)} 
+      />
+
+      {/* WhatsApp Widget */}
+      <Script
+        id="aisensy-wa-widget"
+        src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
+        strategy="afterInteractive"
+        widget-id="aaay9o"
       />
     </section>
   );
