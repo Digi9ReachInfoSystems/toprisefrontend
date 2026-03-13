@@ -460,12 +460,35 @@ export default function BannerSection() {
       />
 
       {/* WhatsApp Widget */}
-      <Script
+      {/* <Script
         id="aisensy-wa-widget"
         src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
         strategy="afterInteractive"
         widget-id="aaay9o"
-      />
+      /> */}
+<Script
+          id="interakt-sdk"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+            (function(w,d,s,c,r,a,m){
+              w['KiwiObject']=r;
+              w[r]=w[r] || function () {
+                (w[r].q=w[r].q||[]).push(arguments)};
+              w[r].l=1*new Date();
+              a=d.createElement(s);
+              m=d.getElementsByTagName(s)[0];
+              a.async=1;
+              a.src=c;
+              m.parentNode.insertBefore(a,m)
+            })(window,document,'script',"https://app.interakt.ai/kiwi-sdk/kiwi-sdk-17-prod-min.js?v="+ new Date().getTime(),'kiwi');
+
+            window.addEventListener("load",function () {
+              kiwi.init('', 'PSqFGFbW6i2PqP4U2t17Jnk9EBpO5sFJ', {});
+            });
+            `,
+          }}
+        />
     </section>
   );
 }
